@@ -1,15 +1,14 @@
 import { Image, View } from 'react-native'
 import styles from './Post.sass'
 import { Text } from '@shared/components/index'
+import PostHeader from './components/PostHeader/PostHeader'
 
 export default function Post({ data }: PostProps) {
   const { authorName, description, image } = data
 
   return (
     <View style={styles.post}>
-      <View style={styles.post__header}>
-        <Text style={styles.post__author}>{authorName}</Text>
-      </View>
+      <PostHeader authorName={authorName} />
       <Image
         style={styles.post__image}
         testID="post-image"
