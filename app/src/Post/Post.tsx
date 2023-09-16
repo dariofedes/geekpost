@@ -1,7 +1,7 @@
 import { Image, View } from 'react-native'
-import styles from './Post.sass'
-import { Text } from '@shared/components/index'
 import PostHeader from './components/PostHeader/PostHeader'
+import PostDetails from './components/PostDetails/PostDetails'
+import styles from './Post.sass'
 
 export default function Post({ data }: PostProps) {
   const { authorName, description, image } = data
@@ -15,9 +15,7 @@ export default function Post({ data }: PostProps) {
         source={{ uri: image }}
         resizeMode="cover"
       />
-      <View style={styles.post__details}>
-        <Text style={styles.post__description}>{description}</Text>
-      </View>
+      <PostDetails description={description} />
     </View>
   )
 }
