@@ -4,7 +4,7 @@ import styles from './PostImage.sass'
 export default function PostImage({ imageUri }: PostImageProps) {
   return (
     <Image
-      style={styles.post__image}
+      style={styles.postImage}
       testID="post-image"
       source={{ uri: imageUri }}
       resizeMode="cover"

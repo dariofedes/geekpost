@@ -1,7 +1,5 @@
 import { View } from 'react-native'
-import PostHeader from './components/PostHeader/PostHeader'
-import PostDetails from './components/PostDetails/PostDetails'
-import PostImage from './components/PostImage/PostImage'
+import { PostDetails, PostHeader, PostImage } from './components'
 import styles from './Post.sass'
 
 export default function Post({ data }: PostProps) {
