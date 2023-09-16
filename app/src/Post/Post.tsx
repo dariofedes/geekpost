@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { Image, Text, View } from 'react-native'
 
 export default function Post({ data }: PostProps) {
   const { authorName, description } = data
@@ -6,6 +6,7 @@ export default function Post({ data }: PostProps) {
   return (
     <View>
       <Text>{authorName}</Text>
+      <Image source={{ uri: data.image }} testID="post-image" />
       <Text>{description}</Text>
     </View>
   )
@@ -18,4 +19,5 @@ type PostProps = {
 type PostData = {
   authorName: string
   description: string
+  image: string
 }

@@ -33,4 +33,21 @@ describe('Post', () => {
     // Then
     expect(postDescription).toBeVisible()
   })
+
+  it('should show an image with the correct uri', async () => {
+    // Given
+    const expectedImageUri = 'anURI'
+    const postData = {
+      authorName: 'an author',
+      description: 'a description',
+      image: expectedImageUri,
+    }
+
+    // When
+    render(<Post data={postData} />)
+    const image = screen.getByTestId('post-image')
+
+    // Then
+    expect(image.props.source.uri).toBe(expectedImageUri)
+  })
 })
