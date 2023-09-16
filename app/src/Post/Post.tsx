@@ -11,11 +11,13 @@ export default function Post({ data }: PostProps) {
       </View>
       <Image
         style={styles.post__image}
-        source={{ uri: image }}
         testID="post-image"
+        source={{ uri: image }}
         resizeMode="cover"
       />
-      <Text style={styles.post__description}>{description}</Text>
+      <View style={styles.post__details}>
+        <Text style={styles.post__description}>{description}</Text>
+      </View>
     </View>
   )
 }
