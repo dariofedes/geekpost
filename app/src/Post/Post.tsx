@@ -1,6 +1,7 @@
-import { Image, View } from 'react-native'
+import { View } from 'react-native'
 import PostHeader from './components/PostHeader/PostHeader'
 import PostDetails from './components/PostDetails/PostDetails'
+import PostImage from './components/PostImage/PostImage'
 import styles from './Post.sass'
 
 export default function Post({ data }: PostProps) {
@@ -9,12 +10,7 @@ export default function Post({ data }: PostProps) {
   return (
     <View style={styles.post}>
       <PostHeader authorName={authorName} />
-      <Image
-        style={styles.post__image}
-        testID="post-image"
-        source={{ uri: image }}
-        resizeMode="cover"
-      />
+      <PostImage imageUri={image} />
       <PostDetails description={description} />
     </View>
   )
