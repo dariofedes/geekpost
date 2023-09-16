@@ -3,11 +3,13 @@ import { render, screen } from '@testing-library/react-native'
 import Post from './Post'
 
 describe('Post', () => {
-  it('should show the post authors name', async () => {
+  it('should show the post authors name', () => {
     // Given
     const expectedAuthorName = 'an author'
     const postData = {
       authorName: expectedAuthorName,
+      description: 'a description',
+      image: 'an image',
     }
 
     // When
@@ -15,15 +17,16 @@ describe('Post', () => {
     const postAuthorName = screen.getByText(expectedAuthorName)
 
     // Then
-    expect(postAuthorName).toBeVisible()
+    expect(postAuthorName).toHaveTextContent(expectedAuthorName)
   })
 
-  it('should show the post description', async () => {
+  it('should show the post description', () => {
     // Given
     const expectedDescription = 'post description'
     const postData = {
       authorName: 'an author',
       description: expectedDescription,
+      image: 'an image',
     }
 
     // When
@@ -31,10 +34,10 @@ describe('Post', () => {
     const postDescription = screen.getByText(expectedDescription)
 
     // Then
-    expect(postDescription).toBeVisible()
+    expect(postDescription).toHaveTextContent(expectedDescription)
   })
 
-  it('should show an image with the correct uri', async () => {
+  it('should show an image with the correct uri', () => {
     // Given
     const expectedImageUri = 'anURI'
     const postData = {

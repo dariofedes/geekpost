@@ -1,5 +1,6 @@
-import { Image, Text, View } from 'react-native'
+import { Image, View } from 'react-native'
 import styles from './Post.sass'
+import { Text } from '@shared/components/index'
 
 export default function Post({ data }: PostProps) {
   const { authorName, description, image } = data
