@@ -1,10 +1,10 @@
-import { View, ViewStyle } from 'react-native'
+import { View } from 'react-native'
 import { Text } from '@shared/components'
 import styles from './PostHeader.sass'
 
-export default function PostHeader({ authorName, style }: PostHeaderProps) {
+export default function PostHeader({ authorName }: PostHeaderProps) {
   return (
-    <View style={[styles.postHeader, style]}>
+    <View style={styles.postHeader}>
       <Text style={styles.postHeader__author}>{authorName}</Text>
     </View>
   )
@@ -12,5 +12,4 @@ export default function PostHeader({ authorName, style }: PostHeaderProps) {
 
 type PostHeaderProps = {
   authorName: string
-  style?: ViewStyle
 }
