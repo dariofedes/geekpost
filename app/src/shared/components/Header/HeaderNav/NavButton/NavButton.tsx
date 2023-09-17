@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, ViewStyle } from 'react-native'
 import styles from './NavButton.sass'
 
 export default function NavButton({ Icon, onPress, ...props }: NavButtonProps) {
@@ -10,6 +10,11 @@ export default function NavButton({ Icon, onPress, ...props }: NavButtonProps) {
 }
 
 type NavButtonProps = {
-  Icon: React.ComponentType
+  Icon: React.ComponentType<IconProps>
   onPress: () => void
+  [key: string]: any
+}
+
+type IconProps = {
+  style: ViewStyle
 }
