@@ -1,22 +1,21 @@
 import { View } from 'react-native'
 import AddIcon from 'assets/add-icon.svg'
-import UserIcon from 'assets/user-icon.svg'
+import ProfileIcon from 'assets/user-icon.svg'
 import styles from './HeaderNav.sass'
+import NavButton from './NavButton/NavButton'
 
 export default function HeaderNav() {
   return (
     <View style={styles.headerNav}>
-      <AddIcon
-        style={styles.header__navIcon}
-        testID="add-icon"
-        width={29}
-        height={29}
+      <NavButton
+        testID="add-post-nav-button"
+        Icon={AddIcon}
+        onPress={() => alert('will add post')}
       />
-      <UserIcon
-        style={styles.header__navIcon}
-        testID="user-icon"
-        width={29}
-        height={29}
+      <NavButton
+        testID="profile-nav-button"
+        Icon={ProfileIcon}
+        onPress={() => alert('will navigate to profile')}
       />
     </View>
   )

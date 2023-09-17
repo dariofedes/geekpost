@@ -11,19 +11,19 @@ describe('Header', () => {
     expect(logo).toBeDefined()
   })
 
-  it('should render the add icon', () => {
+  it('should render the add nav button', () => {
     // When
     render(<Header />)
-    const addIcon = screen.getByTestId('add-icon')
+    const addIcon = screen.getByTestId('add-post-nav-button')
 
     // Then
     expect(addIcon).toBeDefined()
   })
 
-  it('should render the user icon', () => {
+  it('should render the profile nav button', () => {
     // When
     render(<Header />)
-    const userIcon = screen.getByTestId('user-icon')
+    const userIcon = screen.getByTestId('profile-nav-button')
 
     // Then
     expect(userIcon).toBeDefined()
